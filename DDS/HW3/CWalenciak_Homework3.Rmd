@@ -1,0 +1,120 @@
+---
+title: "Live Sesssion 3 Assigment"
+author: "Carl Walenciak"
+date: "November 26, 2018"
+output:
+  html_document:
+    keep_md: yes
+  word_document: default
+---
+
+
+### Problem 1
+```{r , echo = TRUE}
+
+# I am on a windows and I am using cmder for my terminal
+
+# mkdir GitRepos
+# cd GitRepos\
+# git clone https://github.com/caesar0301/awesome-public-datasets.
+```
+
+<br/>  
+
+### Problem 2
+```{r, echo=TRUE}
+#A
+df <- read.csv("titanic.csv")
+
+#B
+table(df$Sex)
+barplot(table(df$Sex), ylim = c(0,600))
+
+#C
+round(vapply(df[c("Age", "Fare", "Survived")],mean, numeric(1), na.rm = T), 2)
+```
+
+<br/>  
+
+### Problem 3
+```{r, echo = TRUE}
+df <- read.csv("sleep_data_01.csv")
+
+sleep <- function(x){
+    
+    #A
+    medAge = median(x$Age, na.rm = T)
+    minDur = min(x$Duration, na.rm = T)
+    maxDur = max(x$Duration, na.rm = T)
+    meanRSES = mean(x$RSES, na.rm = T)
+    sdRSES =sd(x$RSES, na.rm = T)    
+    
+    #B
+    report <- data.frame(medAge
+                         , meanRSES/5
+                         , sdRSES/5
+                         , maxDur - minDur
+                         )
+    
+    #C
+    names(report) <- c("MedianAge"
+                       , "SelfEsteem"
+                       , "SE_SD"
+                       , "DurationRange"
+                       )
+    
+    #D
+    round(report, 2)
+}
+
+sleep(df)
+```
+
+<br/>  
+
+### Problem 4
+```{r, echo = TRUE}
+#A
+#install.packages("fivethrityeight")
+library(fivethirtyeight)
+
+#B
+df <- college_recent_grads
+
+#C
+#http://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/
+
+#D
+dim(df)
+colnames(df)
+
+```
+
+<br/>  
+
+### Problem 5
+``` {r, echo = TRUE}
+#A
+colnames(df)
+length(colnames(df))
+
+#B
+major_count <- data.frame(table(df$major_category))
+names(major_count) <- c("major_category", "Freq")
+major_count 
+
+#C
+par(las = 2, mar=c(15, 4.1, 1, 2.1))
+barplot(major_count$Freq, names.arg= major_count$major_category, ylim = c(0,30))
+
+#D
+write.csv(df, file = "FiveThirtyEight.csv", row.names = F)
+```
+
+<br/>  
+
+### Problem 6
+```{r, echo = TRUE}
+# Homework Repro
+# https://github.com/cwalenciak/SMU_HW
+```
