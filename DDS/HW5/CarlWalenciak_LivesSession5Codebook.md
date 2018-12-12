@@ -1,16 +1,10 @@
----
-title: "Live Sesssion 5 Codebook"
-author: "Carl Walenciak"
-date: "December 11, 2018"
-output:
-  html_document:
-    keep_md: yes
-  word_document: default
----
+### Live Sesssion 5 Codebook"
 
 
 
-df: dataframe that contains the raw data of 2016 childrens names (yob2016.txt).
+
+df: dataframe that contains the raw data of 2016 childrens names (yob2016.txt). <br/>  
+
 y2016: dataframe of the cleaned data of 2016 childrens names.
 y2015: dataframe that contains the 2015 children names data (yob2015.txt).
 final: dataframe of merged dataframes y2016 and y2015.
