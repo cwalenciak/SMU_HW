@@ -1,4 +1,4 @@
-### Live Sesssion 5 Codebook"
+### Live Sesssion 5 Codebook
 
 **df**: dataframe that contains the raw data of 2016 childrens names (yob2016.txt). <br/>  
 **y2016**: dataframe of the cleaned data of 2016 childrens names. <br/>  
